@@ -1,0 +1,64 @@
+###
+POST http://localhost:3000/token HTTP/1.1
+Content-Type: application/json
+
+###
+POST http://localhost:3000/api/movie HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "house infernal",
+  "director":"645c58bbbe78915c86b57034",
+  "gender": "terror",
+  "duration": 100,
+  "country":"USA",
+  "actors":[ "hilbert gain", "jhonn connor" ]
+}
+
+###
+POST http://localhost:3000/api/director HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Hugh Hudson",
+  "movies":["645c8770e0dfaa253dbef695"],
+  "episodes": ["645c5848be78915c86b57032"]
+}
+
+###
+POST http://localhost:3000/api/episode HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "the pilot",
+  "showtv":["645c8998d11d206d35511134"],
+  "director":["645c8810e0dfaa253dbef697"]
+}
+
+###
+POST http://localhost:3000/api/showtv HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "friends",
+  "episodes":["645c88d4b6129330c994695a"],
+  "seasons": 5,
+  "actors":[ "Rachel Green",
+"Monica Geller",
+"Phoebe Buffay",
+"Joey Tribbiani",
+"Chandler Bing",
+"Ross Geller" ]
+}
+###
+GET http://localhost:3000/api/movies HTTP/1.1
+
+###
+GET http://localhost:3000/api/movies/23206c60-8d75-4629-b93b-b74ee002b189 HTTP/1.1
+
+###
+GET http://localhost:3000/api/movie/house infernal HTTP/1.1
+
+###
+GET http://localhost:3000/api/episode/645c8eaf0dff58f4b4e89ffb HTTP/1.1
+

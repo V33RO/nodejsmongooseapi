@@ -1,0 +1,115 @@
+{
+    "env": {
+      "browser": false,
+      "jest": true,
+      "node": true
+    },
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": [
+        "./tsconfig.json"
+      ]
+    },
+    "plugins": [
+      "@typescript-eslint/eslint-plugin",
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "airbnb-base",
+      "airbnb-typescript/base",
+      "plugin:prettier/recommended",
+      "prettier"
+    ],
+    "rules": {
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "variableLike",
+          "leadingUnderscore": "allow",
+          "trailingUnderscore": "allow",
+          "format": [
+            "camelCase",
+            "PascalCase",
+            "UPPER_CASE"
+          ]
+        }
+      ],
+      "no-underscore-dangle": [
+        "error",
+        {
+          "allow": [
+            "_id"
+          ]
+        }
+      ],
+      "import/prefer-default-export": [
+        0
+      ],
+      "@typescript-eslint/dot-notation": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "error",
+      "class-methods-use-this": "off",
+      "@typescript-eslint/no-shadow": 0,
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "quotes": [
+        "error",
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ],
+      "prettier/prettier": [
+        "error",
+        {
+          "parser": "typescript",
+          "semi": true,
+          "printWidth": 200,
+          "singleQuote": true,
+          "trailingComma": "none",
+          "tabWidth": 2,
+          "arrowParens": "avoid"
+        }
+      ]
+    },
+    "ignorePatterns": [
+      "**/*.(test|spec).ts",
+      "jest.config.ts",
+      "functional-test/**/*"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.(test|spec).ts"
+        ],
+        "plugins": [
+          "jest"
+        ],
+        "extends": [
+          "plugin:jest/recommended"
+        ],
+        "rules": {
+          "max-classes-per-file": "warn",
+          "prefer-promise-reject-errors": "off",
+          "jest/no-hooks": "off",
+          "jest/prefer-expect-assertions": "off",
+          "quotes": [
+            "error",
+            "single",
+            {
+              "avoidEscape": true
+            }
+          ]
+        }
+      }
+    ]
+  }
